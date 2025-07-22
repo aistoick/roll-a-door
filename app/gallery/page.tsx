@@ -1,21 +1,24 @@
-import type { Metadata } from "next"
+"use client"
 import { Calendar, MapPin, User, ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
+import { useState } from "react"
 
-export const metadata: Metadata = {
-  title: "Gallery - Roll-A-Door Specialist",
-  description: "View our completed garage door installation and repair projects across Melbourne.",
-}
+// export const metadata: Metadata = {
+//   title: "Gallery - Roll-A-Door Specialist",
+//   description: "View our completed garage door installation and repair projects across Melbourne.",
+// }
 
-export default function GalleryPage() {
+export default function GalleryClientPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All")
+
   const projects = [
     {
       id: 1,
       title: "Modern Sectional Door Installation - Brighton",
-      category: "Residential Installation",
+      category: "Gate",
       location: "Brighton, Melbourne",
       date: "March 2024",
       client: "The Johnson Family",
@@ -23,13 +26,11 @@ export default function GalleryPage() {
       description:
         "Complete installation of premium insulated sectional door with smart WiFi opener for a contemporary home in Brighton.",
       features: ["Insulated sectional door", "Smart WiFi opener", "Custom color matching", "Professional installation"],
-      beforeImage: "/placeholder.svg?height=300&width=400",
-      afterImage: "/placeholder.svg?height=300&width=400",
     },
     {
       id: 2,
       title: "Commercial Roller Door Upgrade - Box Hill",
-      category: "Commercial Installation",
+      category: "Gate",
       location: "Box Hill, Melbourne",
       date: "February 2024",
       client: "Metro Automotive",
@@ -37,13 +38,13 @@ export default function GalleryPage() {
       description:
         "Heavy-duty commercial roller door installation for automotive workshop with enhanced security features.",
       features: ["Heavy-duty roller door", "Enhanced security", "Remote access control", "Maintenance contract"],
-      beforeImage: "/placeholder.svg?height=300&width=400",
-      afterImage: "/placeholder.svg?height=300&width=400",
+      // beforeImage: "/placeholder.svg?height=300&width=400",
+      // afterImage: "/placeholder.svg?height=300&width=400",
     },
     {
       id: 3,
       title: "Heritage Door Restoration - Toorak",
-      category: "Restoration",
+      category: "Gate",
       location: "Toorak, Melbourne",
       date: "January 2024",
       client: "Heritage Property Trust",
@@ -51,13 +52,12 @@ export default function GalleryPage() {
       description:
         "Careful restoration of heritage timber garage doors while maintaining original character and adding modern functionality.",
       features: ["Heritage restoration", "Timber refinishing", "Modern hardware", "Period-appropriate design"],
-      beforeImage: "/placeholder.svg?height=300&width=400",
-      afterImage: "/placeholder.svg?height=300&width=400",
+      
     },
     {
       id: 4,
       title: "Smart Home Integration - Caulfield",
-      category: "Smart Automation",
+      category: "Gate",
       location: "Caulfield, Melbourne",
       date: "March 2024",
       client: "The Chen Residence",
@@ -71,7 +71,7 @@ export default function GalleryPage() {
     {
       id: 5,
       title: "Emergency Repair Service - Preston",
-      category: "Emergency Repair",
+      category: "Garage Door",
       location: "Preston, Melbourne",
       date: "February 2024",
       client: "Emergency Service Call",
@@ -85,7 +85,7 @@ export default function GalleryPage() {
     {
       id: 6,
       title: "Designer Glass Door - South Yarra",
-      category: "Premium Installation",
+      category: "Garage Door",
       location: "South Yarra, Melbourne",
       date: "January 2024",
       client: "Luxury Residence",
@@ -99,7 +99,7 @@ export default function GalleryPage() {
     {
       id: 7,
       title: "Multi-Unit Complex - Doncaster",
-      category: "Commercial Installation",
+      category: "Garage Door",
       location: "Doncaster, Melbourne",
       date: "December 2023",
       client: "Doncaster Apartments",
@@ -110,14 +110,13 @@ export default function GalleryPage() {
       beforeImage: "/placeholder.svg?height=300&width=400",
       afterImage: "/placeholder.svg?height=300&width=400",
     },
-   
-  
+    
   ]
 
-  const categories = [
-    "Gate",
-    "Garage Door",
-  ]
+  const categories = ["All", "Gate", "Garage Door"]
+
+  const filteredProjects =
+    selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
 
   return (
     <div className="pt-20">
@@ -165,8 +164,9 @@ export default function GalleryPage() {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={category === "All Projects" ? "default" : "outline"}
-                className={category === "All Projects" ? "bg-orange-600 hover:bg-orange-700" : "bg-transparent"}
+                variant={category === selectedCategory ? "default" : "outline"}
+                className={category === selectedCategory ? "bg-orange-600 hover:bg-orange-700" : "bg-transparent"}
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
@@ -179,7 +179,7 @@ export default function GalleryPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <Card
                 key={project.id}
                 className="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-0 overflow-hidden"
@@ -195,12 +195,12 @@ export default function GalleryPage() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
-                      {/* <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100" asChild>
-                        <Link href={`/gallery/${project.id}`}>
+                      <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100" asChild>
+                        {/* <Link href={`/gallery/${project.id}`}>
                           View Project Details
                           <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button> */}
+                        </Link> */}
+                      </Button>
                     </div>
                   </div>
                 </div>
