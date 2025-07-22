@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   title: "Roll-A-Door Specialist - Professional Garage Door Services",
   description:
     "Expert garage door installation, repair, and maintenance services in Melbourne. 24/7 emergency service available.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

@@ -19,7 +19,7 @@ export default function GalleryPage() {
       location: "Brighton, Melbourne",
       date: "March 2024",
       client: "The Johnson Family",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_1.jpg",
       description:
         "Complete installation of premium insulated sectional door with smart WiFi opener for a contemporary home in Brighton.",
       features: ["Insulated sectional door", "Smart WiFi opener", "Custom color matching", "Professional installation"],
@@ -33,7 +33,7 @@ export default function GalleryPage() {
       location: "Box Hill, Melbourne",
       date: "February 2024",
       client: "Metro Automotive",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_2.jpg",
       description:
         "Heavy-duty commercial roller door installation for automotive workshop with enhanced security features.",
       features: ["Heavy-duty roller door", "Enhanced security", "Remote access control", "Maintenance contract"],
@@ -47,7 +47,7 @@ export default function GalleryPage() {
       location: "Toorak, Melbourne",
       date: "January 2024",
       client: "Heritage Property Trust",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_3.jpg",
       description:
         "Careful restoration of heritage timber garage doors while maintaining original character and adding modern functionality.",
       features: ["Heritage restoration", "Timber refinishing", "Modern hardware", "Period-appropriate design"],
@@ -61,7 +61,7 @@ export default function GalleryPage() {
       location: "Caulfield, Melbourne",
       date: "March 2024",
       client: "The Chen Residence",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_4.jpg",
       description:
         "Complete smart home integration with voice control, smartphone app, and automated scheduling for modern family home.",
       features: ["Voice control setup", "Smartphone integration", "Automated scheduling", "Security monitoring"],
@@ -75,7 +75,7 @@ export default function GalleryPage() {
       location: "Preston, Melbourne",
       date: "February 2024",
       client: "Emergency Service Call",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_5.jpg",
       description:
         "24-hour emergency repair service for broken garage door spring, restoring full functionality within hours.",
       features: ["24-hour service", "Spring replacement", "Safety inspection", "Same-day completion"],
@@ -89,7 +89,7 @@ export default function GalleryPage() {
       location: "South Yarra, Melbourne",
       date: "January 2024",
       client: "Luxury Residence",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_6.jpg",
       description:
         "Premium aluminum and glass garage door installation for luxury residence with custom design and natural light features.",
       features: ["Custom glass panels", "Aluminum framework", "Natural light design", "Premium hardware"],
@@ -103,50 +103,20 @@ export default function GalleryPage() {
       location: "Doncaster, Melbourne",
       date: "December 2023",
       client: "Doncaster Apartments",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/img_7.jpg",
       description:
         "Large-scale installation project for 24-unit apartment complex with coordinated design and bulk installation efficiency.",
       features: ["24 door installation", "Coordinated design", "Bulk efficiency", "Maintenance program"],
       beforeImage: "/placeholder.svg?height=300&width=400",
       afterImage: "/placeholder.svg?height=300&width=400",
     },
-    {
-      id: 8,
-      title: "Vintage Car Collector Garage - Malvern",
-      category: "Specialty Installation",
-      location: "Malvern, Melbourne",
-      date: "November 2023",
-      client: "Private Collector",
-      image: "/placeholder.svg?height=400&width=600",
-      description:
-        "Specialized garage door solution for vintage car collector with climate control integration and security features.",
-      features: ["Climate control integration", "Enhanced security", "Soft-close operation", "Custom sizing"],
-      beforeImage: "/placeholder.svg?height=300&width=400",
-      afterImage: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      id: 9,
-      title: "Warehouse Upgrade - Footscray",
-      category: "Industrial Installation",
-      location: "Footscray, Melbourne",
-      date: "October 2023",
-      client: "Industrial Solutions Ltd",
-      image: "/placeholder.svg?height=400&width=600",
-      description:
-        "Industrial-grade roller door installation for warehouse facility with high-cycle rating and automated controls.",
-      features: ["Industrial-grade construction", "High-cycle rating", "Automated controls", "Safety systems"],
-      beforeImage: "/placeholder.svg?height=300&width=400",
-      afterImage: "/placeholder.svg?height=300&width=400",
-    },
+   
+  
   ]
 
   const categories = [
-    "All Projects",
-    "Residential Installation",
-    "Commercial Installation",
-    "Smart Automation",
-    "Emergency Repair",
-    "Restoration",
+    "Gate",
+    "Garage Door",
   ]
 
   return (
@@ -225,12 +195,12 @@ export default function GalleryPage() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
-                      <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100" asChild>
+                      {/* <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100" asChild>
                         <Link href={`/gallery/${project.id}`}>
                           View Project Details
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </div>
@@ -300,7 +270,7 @@ export default function GalleryPage() {
               className="border-white text-white hover:bg-white hover:text-slate-900 px-10 py-4 text-xl font-bold bg-transparent"
               asChild
             >
-              <Link href="/contact">Get Free Quote</Link>
+              <Link href="/contact">Contact us</Link>
             </Button>
           </div>
         </div>

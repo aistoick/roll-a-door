@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="/images/about_us.jpg"
                 alt="Roll-A-Door Specialist team at work"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

@@ -40,7 +40,7 @@ export default function Header() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">ROLL-A-DOOR</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">ROLL A DOOR</h3>
               </div>
             </Link>
 
@@ -71,7 +71,7 @@ export default function Header() {
                 className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                 asChild
               >
-                <Link href="/contact">Get Free Quote</Link>
+                {/* <Link href="/contact">Get Free Quote</Link> */}
               </Button>
             </div>
 

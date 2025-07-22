@@ -11,9 +11,9 @@ import Link from "next/link"
 const garageDoors = [
   {
     id: 1,
-    name: "Premium Sectional Door - Insulated",
+    name: "Grifco SOHD",
     category: "Garage Doors",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/tool_1.png",
     rating: 4.9,
     reviews: 127,
     features: ["Insulated panels", "Quiet operation", "10-year warranty", "Professional installation"],
@@ -29,9 +29,9 @@ const garageDoors = [
   },
   {
     id: 2,
-    name: "Classic Roller Door - Steel",
+    name: "Merlin MS105",
     category: "Garage Doors",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/tool_2.png",
     rating: 4.7,
     reviews: 89,
     features: ["Durable steel construction", "Space-saving design", "Weather resistant", "Easy maintenance"],
@@ -47,9 +47,9 @@ const garageDoors = [
   },
   {
     id: 3,
-    name: "Designer Aluminum & Glass Door",
+    name: "Industrial GRIFCO MAESTRO Motor ",
     category: "Garage Doors",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/tool_3.png",
     rating: 4.8,
     reviews: 64,
     features: ["Modern design", "Natural light", "Corrosion resistant", "Custom sizing"],
@@ -65,9 +65,9 @@ const garageDoors = [
   },
   {
     id: 4,
-    name: "Traditional Tilt Door - Timber",
+    name: "Merlin MR855",
     category: "Garage Doors",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/tool_4.png",
     rating: 4.6,
     reviews: 45,
     features: ["Natural timber finish", "Classic design", "Cost-effective", "Customizable"],
@@ -81,50 +81,15 @@ const garageDoors = [
       Maintenance: "Regular required",
     },
   },
-  {
-    id: 5,
-    name: "Commercial Heavy-Duty Roller",
-    category: "Garage Doors",
-    image: "/placeholder.svg?height=300&width=400",
-    rating: 4.9,
-    reviews: 32,
-    features: ["Heavy-duty construction", "High-cycle springs", "Commercial grade", "Extended warranty"],
-    description: "Industrial-strength roller door for commercial applications.",
-    inStock: true,
-    badge: "Commercial",
-    specifications: {
-      Application: "Commercial",
-      Cycles: "High-cycle rated",
-      Motor: "Heavy-duty",
-      Warranty: "Extended",
-    },
-  },
-  {
-    id: 6,
-    name: "Side Hinged Heritage Door",
-    category: "Garage Doors",
-    image: "/placeholder.svg?height=300&width=400",
-    rating: 4.5,
-    reviews: 28,
-    features: ["Heritage styling", "Pedestrian access", "No power required", "Custom colors"],
-    description: "Traditional side-hinged door perfect for period homes.",
-    inStock: false,
-    badge: "Out of Stock",
-    specifications: {
-      Style: "Heritage",
-      Operation: "Manual",
-      Access: "Pedestrian friendly",
-      Colors: "Custom available",
-    },
-  },
+  
 ]
 
 const automationProducts = [
   {
     id: 7,
-    name: "Smart WiFi Garage Door Opener",
+    name: "Remote 4",
     category: "Automation & Accessories",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/p_1.png",
     rating: 4.8,
     reviews: 156,
     features: ["WiFi connectivity", "Smartphone app", "Voice control", "Security alerts"],
@@ -140,9 +105,9 @@ const automationProducts = [
   },
   {
     id: 8,
-    name: "Premium Remote Control Set",
+    name: "Elsima(new) - 1 button",
     category: "Automation & Accessories",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/p_2.png",
     rating: 4.7,
     reviews: 203,
     features: ["Rolling code security", "Long range", "LED indicator", "2 remotes included"],
@@ -158,9 +123,9 @@ const automationProducts = [
   },
   {
     id: 9,
-    name: "Wireless Keypad Entry System",
+    name: "SOHD - 2 buttons",
     category: "Automation & Accessories",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/p_3.png",
     rating: 4.6,
     reviews: 87,
     features: ["Weather resistant", "Backlit keypad", "Multiple user codes", "Battery powered"],
@@ -176,9 +141,9 @@ const automationProducts = [
   },
   {
     id: 10,
-    name: "Smart Home Integration Hub",
+    name: "SOHD",
     category: "Automation & Accessories",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/p_4.png",
     rating: 4.9,
     reviews: 74,
     features: ["Google/Alexa compatible", "Multiple protocols", "Easy setup", "Cloud connectivity"],
@@ -194,9 +159,9 @@ const automationProducts = [
   },
   {
     id: 11,
-    name: "Professional Motor Kit - 1HP",
+    name: "Merlin(New)",
     category: "Automation & Accessories",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/p_5.png",
     rating: 4.8,
     reviews: 45,
     features: ["1HP motor", "Soft start/stop", "Manual release", "5-year warranty"],
@@ -212,9 +177,9 @@ const automationProducts = [
   },
   {
     id: 12,
-    name: "Safety Sensor Kit",
+    name: "Remote 1",
     category: "Automation & Accessories",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/p_6.png",
     rating: 4.5,
     reviews: 112,
     features: ["Infrared sensors", "Auto-reverse", "Weather resistant", "Easy installation"],
@@ -240,8 +205,8 @@ export default function ProductsPage() {
 
   const categories = [
     { id: "all", name: "All Products", count: allProducts.length },
-    { id: "garage-doors", name: "Garage Doors", count: garageDoors.length },
-    { id: "automation", name: "Automation & Accessories", count: automationProducts.length },
+    { id: "garage-doors", name: "Tools", count: garageDoors.length },
+    { id: "automation", name: "Remote", count: automationProducts.length },
   ]
 
   const filteredProducts =

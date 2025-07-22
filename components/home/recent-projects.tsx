@@ -5,19 +5,19 @@ import Link from "next/link"
 export default function RecentProjects() {
   const projects = [
     {
-      src: "/placeholder.svg?height=300&width=400",
+      src: "/images/img_1.jpg",
       alt: "Modern residential garage door installation",
       title: "Residential Installation",
       category: "Installation",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
+      src: "/images/img_2.jpg",
       alt: "Commercial garage door repair service",
       title: "Commercial Repair",
       category: "Repair",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
+      src: "/images/img_3.jpg",
       alt: "Remote control garage door system",
       title: "Remote Systems",
       category: "Remote",

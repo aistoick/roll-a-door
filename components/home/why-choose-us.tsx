@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
           <div className="relative">
             <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl p-8 shadow-2xl">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="/images/why_choose.jpg"
                 alt="Professional garage door technician at work"
                 className="w-full h-auto rounded-lg shadow-lg"
               />

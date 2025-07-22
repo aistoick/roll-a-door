@@ -15,7 +15,7 @@ export default function Hero() {
       subtitle: "Premium Quality • Expert Service • 10-Year Warranty",
       description:
         "Transform your property with our premium garage door solutions. Professional installation with comprehensive warranty coverage.",
-      image: "/placeholder.svg?height=600&width=800&text=Professional+Installation",
+      image: "/images/slide.jpg",
       features: ["Free consultation", "Same-day service", "10-year warranty", "Licensed professionals"],
       cta: "Get Free Quote",
       ctaLink: "/contact",
@@ -25,7 +25,7 @@ export default function Hero() {
       subtitle: "Fast Response • Expert Technicians • Reliable Solutions",
       description:
         "Garage door stuck or broken? Our emergency team is available 24/7 to get you back on track quickly and safely.",
-      image: "/placeholder.svg?height=600&width=800&text=Emergency+Repair",
+      image: "/images/slide_2.jpg",
       features: ["24/7 availability", "2-hour response", "All brands serviced", "Upfront pricing"],
       cta: "Call Emergency",
       ctaLink: "tel:0432645789",
@@ -35,7 +35,7 @@ export default function Hero() {
       subtitle: "Modern Technology • Remote Control • Smart Integration",
       description:
         "Upgrade to smart garage door automation with smartphone control, voice activation, and home integration.",
-      image: "/placeholder.svg?height=600&width=800&text=Smart+Automation",
+      image: "/images/slide-3.jpg",
       features: ["Smartphone control", "Voice activation", "Home integration", "Security monitoring"],
       cta: "Learn More",
       ctaLink: "/products",
@@ -61,22 +61,22 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={currentSlideData.image || "/placeholder.svg"}
           alt={currentSlideData.title}
           className="w-full h-full object-cover transition-opacity duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div className="text-white space-y-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[700px]">
+            {/* Left Side */}
+            <div className="text-white flex flex-col justify-between h-full space-y-10">
               <div className="space-y-6">
                 <div className="inline-flex items-center bg-orange-600/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-4 py-2 text-orange-300">
                   <Award className="h-4 w-4 mr-2" />
@@ -92,10 +92,8 @@ export default function Hero() {
                 </h1>
 
                 <p className="text-xl text-orange-300 font-semibold">{currentSlideData.subtitle}</p>
-
                 <p className="text-lg text-slate-300 leading-relaxed max-w-xl">{currentSlideData.description}</p>
 
-                {/* Features */}
                 <div className="grid grid-cols-2 gap-3">
                   {currentSlideData.features.map((feature, index) => (
                     <div key={index} className="flex items-center text-slate-300">
@@ -106,8 +104,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className="space-y-6">
+              {/* CTA */}
+              <div className="space-y-6 pt-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
@@ -140,9 +138,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right Side - Info Cards */}
+            {/* Right Side */}
             <div className="space-y-6">
-              {/* Main Info Card */}
               <Card className="bg-white/95 backdrop-blur-sm shadow-2xl border-0">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
@@ -154,36 +151,19 @@ export default function Hero() {
                       <p className="text-slate-600">1000+ Happy Customers</p>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-700">Professional Service</span>
+                  {["Professional Service", "Quality Workmanship", "Customer Support"].map((label, idx) => (
+                    <div key={idx} className="flex justify-between items-center">
+                      <span className="text-slate-700">{label}</span>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-700">Quality Workmanship</span>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-700">Customer Support</span>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </CardContent>
               </Card>
 
-              {/* Trust Indicators */}
               <div className="grid grid-cols-3 gap-4">
                 <Card className="bg-white/90 backdrop-blur-sm shadow-lg border-0">
                   <CardContent className="p-6 text-center">
@@ -215,10 +195,7 @@ export default function Hero() {
       {/* Slider Controls */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex items-center space-x-4">
-          <button
-            onClick={prevSlide}
-            className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full transition-all duration-200"
-          >
+          <button onClick={prevSlide} className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full transition-all duration-200">
             <ChevronLeft className="h-5 w-5" />
           </button>
 
@@ -234,10 +211,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <button
-            onClick={nextSlide}
-            className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full transition-all duration-200"
-          >
+          <button onClick={nextSlide} className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full transition-all duration-200">
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
@@ -250,13 +224,6 @@ export default function Hero() {
             {String(currentSlide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
           </span>
         </div>
-      </div>
-
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
-        <svg viewBox="0 0 1200 120" fill="none" className="w-full h-20">
-          <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="white" />
-        </svg>
       </div>
     </section>
   )
